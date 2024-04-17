@@ -8,14 +8,14 @@ jobs:
       fail-fast: false
       matrix:
         php: ['8.3']
-        ts: [nts, ts]
+        ts: [nts]
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
       - name: Install PHP ${{ matrix.php }}
-        uses: cmb69/setup-php-sdk@v0.6
+        uses: php/setup-php-sdk@v0.8
         id: setup-php-sdk
         with:
           version: ${{ matrix.php }}
